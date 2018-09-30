@@ -32,7 +32,7 @@ The sizes of fires range from 0.001 [hectares](https://en.wikipedia.org/wiki/Hec
 
 |Class 1|2|3|4|5|6|7|
 |---|---|---|---|---|---|---|
-|<0.25|0.25<=  & < 10| 10<= & < 100| 100<= & < 300| 300<= & < 1000| 1000<= & < 3000| 3000<= Size|
+|<0.25|0.25<=  & < 10| 10<= & < 100| 100<= & < 300| 300<= & < 1000| 1000<= & < 3000| 3000<= |
 
 
 ```
@@ -55,7 +55,11 @@ fires$CLASS_NUM<-with(fires,ifelse(fires$SIZE_AC<0.25,fires$CLASS<-1,
 Let's look more at the breakdown of causes by class. Really used an ugly method to create because kept getting weird errors.
 
 ```
-classes<-data.frame("class"=c(1,2,3,4,5,6,7),"num"=c(0,0,0,0,0,0,0),"cause_ppl"=c(0,0,0,0,0,0,0),"cause_lgt"=c(0,0,0,0,0,0,0),"cause_uk"=c(0,0,0,0,0,0,0))
+#Create a new dataframe
+
+classes<-data.frame("class"=c(1:7),"num"=c(1:7),"cause_ppl"=c(1:7),"cause_lgt"=c(1:7),"cause_uk"=c(1:7))
+
+#Fill the dataframe
 
 for(i in 1:7){
      classes$class  
@@ -67,8 +71,10 @@ for(i in 1:7){
 ```
 
 ```
+#Create a new dataframe by reshaping the old one. This is to make it easier to creat eour plot
 classes_melt<-melt(classes,id=c("class","num"))
 
+#Create a stacked bar chart
 cause_bar<-ggplot(data=classes_melt,aes(x=class,y=value,fill=variable))+geom_bar(stat="identity")+xlab("Fire Class")+scale_x_continuous(breaks=c(1,2,3,4,5,6,7))+theme(panel.grid.minor.x=element_blank())+ylab("Number of Fires")+scale_y_continuous(labels=c("0","25,000","50,000","75,000","100,000"))+ggtitle("Third Class Burns",subtitle="B.C. Forest Fires, 1950-2017")+guides(fill=guide_legend(title="Fire Cause"))
 ```
 
@@ -77,9 +83,12 @@ cause_bar<-ggplot(data=classes_melt,aes(x=class,y=value,fill=variable))+geom_bar
 There are vastly more small fires than large fires (96% are smaller than 100 acres), but the largest 1% of fires account for over 90% of the total area burned. How has the amount of forest burned annual changed over time?
 
 ```
+#Make another dataframe, this time to study the area burned by year
 annual_class<-data.frame("year"<-(1950:2017),"num_fires"<-(1950:2017),"burned_ac_total"<-(1950:2017),"burned_ac_1"<-(1950:2017),"burned_ac_2"<-(1950:2017),"burned_ac_3"<-(1950:2017),"burned_ac_4"<-(1950:2017),"burned_ac_5"<-(1950:2017),"burned_ac_6"<-(1950:2017),"burned_ac_7"<-(1950:2017))
 
 colnames(annual_class)<-c("year","num_fires","burned_ac_total","burned_ac_1","burned_ac_2","burned_ac_3","burned_ac_4","burned_ac_5","burned_ac_6","burned_ac_7")
+
+#Fill up our years dataframe
 
 for(i in 1950:2017){
     annual_class$year[i-1949]<-i
@@ -94,14 +103,12 @@ for(i in 1950:2017){
     annual_class$burned_ac_7[i-1949]<-sum(subset(fires$SIZE_AC,as.numeric(fires$FIRE_YEAR==i) & as.numeric(fires$CLASS_NUM == 7)))
 }
 
-
-
 ```
 
 Over the 67 years this data covers, over 20 million acres of forest have burned. The yearly amount of burning ranges from thousands of acres, to millions of acres; the median is 86,000 acres. 
 
 ```
-
+#Reshape this dataframe to create our plot
 annual_class_melt<-melt(annual_class,id=c("year","num_fires","burned_ac_total"))
 
 annual_class_bar<-ggplot(data=annual_class_melt,aes(x=year,y=value,fill=rev(variable)))+geom_bar(stat="identity")+xlab("Year")+scale_x_continuous(breaks=c(1950,1960,1970,1980,1990,2000,2010,2017))+ylab("Acres Burned")+scale_y_continuous(breaks=c(0,500000,1000000,2000000,3000000),labels=c("0","500,000","1,000,000","2,000,000","3,000,000"))+ggtitle("The Forests They Are a-Burnin'", subtitle="B.C. Forest Fires")+scale_fill_discrete(name = "Fire Class", labels = c("7", "6","5","4","3","2","1"))
