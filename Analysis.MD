@@ -32,7 +32,7 @@ The sizes of fires range from 0.001 [hectares](https://en.wikipedia.org/wiki/Hec
 
 |Class 1|2|3|4|5|6|7|
 |---|---|---|---|---|---|---|
-|Size <0.25|0.25 <=  Size < 10| 10 <= Size < 100| 100<= Size < 300| 300 <= Size < 1000| 1000<=Size < 3000| 3000<= Size|
+|<0.25|0.25<=  & < 10| 10<= & < 100| 100<= & < 300| 300<= & < 1000| 1000<= & < 3000| 3000<= Size|
 
 
 ```
