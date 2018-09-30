@@ -28,7 +28,7 @@ fires$SHAPE<-NULL
 
 Of the 150,000 fires recorded between 1950 and 2017, 58% of fires were caused by humans, 41% by lightning, and a small fraction with unknown causes.
 
-The sizes of fires range from 0.001 [hectares](https://en.wikipedia.org/wiki/Hectare) (ha) to over 500,000 ha. This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group (NWCG) have created a set of (classes)[https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0] for fire sizes. Based on these we will add a new column to our dataframe. 
+The sizes of fires range from 0.001 [hectares](https://en.wikipedia.org/wiki/Hectare) (ha) to over 500,000 ha. This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group (NWCG) have created a set of (classes)(https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0) for fire sizes. Based on these we will add a new column to our dataframe. 
 
 [make a table with fire classes and sizes]
 
