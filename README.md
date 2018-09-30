@@ -1,3 +1,0 @@
-# forest_fires
-
-asd
