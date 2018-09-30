@@ -30,7 +30,10 @@ Of the 150,000 fires recorded between 1950 and 2017, 58% of fires were caused by
 
 The sizes of fires range from 0.001 [hectares](https://en.wikipedia.org/wiki/Hectare) (ha) to over 500,000 ha. This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group (NWCG) have created a set of [classes](https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0) for fire sizes. Based on these we will add a new column to our dataframe. 
 
-[make a table with fire classes and sizes]
+|Class 1|2|3|4|5|6|7|
+|---|---|---|---|---|---|---|
+|Size <0.25|0.25 <=  Size < 10| 10 <= Size < 100| 100<= Size < 300| 300 <= Size < 1000| 1000<=Size < 3000| 3000<= Size|
+
 
 ```
 #Since the NWCG classifications are in acres we will create a column with the sizes in acres
@@ -69,7 +72,7 @@ classes_melt<-melt(classes,id=c("class","num"))
 cause_bar<-ggplot(data=classes_melt,aes(x=class,y=value,fill=variable))+geom_bar(stat="identity")+xlab("Fire Class")+scale_x_continuous(breaks=c(1,2,3,4,5,6,7))+theme(panel.grid.minor.x=element_blank())+ylab("Number of Fires")+scale_y_continuous(labels=c("0","25,000","50,000","75,000","100,000"))+ggtitle("Third Class Burns",subtitle="B.C. Forest Fires, 1950-2017")+guides(fill=guide_legend(title="Fire Cause"))
 ```
 
-![cause_bar](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/cause_bar.png)
+![cause_bar](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/cause_bar_labels.png)
 
 There are vastly more small fires than large fires (96% are smaller than 100 acres), but the largest 1% of fires account for over 90% of the total area burned. How has the amount of forest burned annual changed over time?
 
