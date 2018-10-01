@@ -5,6 +5,37 @@ The relationship between forests and fires is complicated. Fires are a natural p
 
 With the sun obscured and skies darkened on what should be a sunny summer day, I decided to look at the history of BC's forest fires. This data is from the BC online data catalogue, and runs from 1950-2017. As of writing, this preliminary data shows that 2018 has surpassed 2017 to become [BC's worst ever year](https://www.cbc.ca/news/canada/british-columbia/state-emergency-bc-wildfires-1.4803546) but as the season is not over the data is thus incomplete and not used.
 
+
+
+Of the 150,000 fires recorded between 1950 and 2017, 58% of fires were caused by humans, 41% by lightning, and a small fraction with unknown causes.
+
+The sizes of fires range from 0.001 [hectares](https://en.wikipedia.org/wiki/Hectare) (ha) to over 500,000 ha. This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group (NWCG) have created a set of [classes](https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0) for fire sizes. Based on these we will add a new column to our dataframe. 
+
+|Class 1|2|3|4|5|6|7|
+|---|---|---|---|---|---|---|
+|<0.25|0.25<=  & < 10| 10<= & < 100| 100<= & < 300| 300<= & < 1000| 1000<= & < 3000| 3000<= |
+
+
+
+
+![cause_bar](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/cause_bar_labels.png)
+
+There are vastly more small fires than large fires (96% are smaller than 100 acres), but the largest 1% of fires account for over 90% of the total area burned. How has the amount of forest burned annual changed over time?
+
+
+
+Over the 67 years this data covers, over 20 million acres of forest have burned. The yearly amount of burning ranges from thousands of acres, to millions of acres; the median is 86,000 acres. 
+
+
+![year_class_bar](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/year_class_bar.png)
+
+2017 is certainly the worst year on record with over 3 million acres of forest fires. There is no clear pattern to the data, and a discussion of the effects of global warming on forest fires is beyond the scope of this project.
+
+
+
+
+# Code
+
 Let's start by loading our data CSV into RStudio.
 
 ```
@@ -25,16 +56,6 @@ fires$FIRE_NO<-NULL
 fires$GEO_DESC<-NULL
 fires$SHAPE<-NULL
 ```
-
-Of the 150,000 fires recorded between 1950 and 2017, 58% of fires were caused by humans, 41% by lightning, and a small fraction with unknown causes.
-
-The sizes of fires range from 0.001 [hectares](https://en.wikipedia.org/wiki/Hectare) (ha) to over 500,000 ha. This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group (NWCG) have created a set of [classes](https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0) for fire sizes. Based on these we will add a new column to our dataframe. 
-
-|Class 1|2|3|4|5|6|7|
-|---|---|---|---|---|---|---|
-|<0.25|0.25<=  & < 10| 10<= & < 100| 100<= & < 300| 300<= & < 1000| 1000<= & < 3000| 3000<= |
-
-
 ```
 #Since the NWCG classifications are in acres we will create a column with the sizes in acres
 ha2ac<-2.471
@@ -77,11 +98,6 @@ classes_melt<-melt(classes,id=c("class","num"))
 #Create a stacked bar chart
 cause_bar<-ggplot(data=classes_melt,aes(x=class,y=value,fill=variable))+geom_bar(stat="identity")+xlab("Fire Class")+scale_x_continuous(breaks=c(1,2,3,4,5,6,7))+theme(panel.grid.minor.x=element_blank())+ylab("Number of Fires")+scale_y_continuous(labels=c("0","25,000","50,000","75,000","100,000"))+ggtitle("Third Class Burns",subtitle="B.C. Forest Fires, 1950-2017")+guides(fill=guide_legend(title="Fire Cause"))
 ```
-
-![cause_bar](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/cause_bar_labels.png)
-
-There are vastly more small fires than large fires (96% are smaller than 100 acres), but the largest 1% of fires account for over 90% of the total area burned. How has the amount of forest burned annual changed over time?
-
 ```
 #Make another dataframe, this time to study the area burned by year
 annual_class<-data.frame("year"<-(1950:2017),"num_fires"<-(1950:2017),"burned_ac_total"<-(1950:2017),"burned_ac_1"<-(1950:2017),"burned_ac_2"<-(1950:2017),"burned_ac_3"<-(1950:2017),"burned_ac_4"<-(1950:2017),"burned_ac_5"<-(1950:2017),"burned_ac_6"<-(1950:2017),"burned_ac_7"<-(1950:2017))
@@ -105,17 +121,9 @@ for(i in 1950:2017){
 
 ```
 
-Over the 67 years this data covers, over 20 million acres of forest have burned. The yearly amount of burning ranges from thousands of acres, to millions of acres; the median is 86,000 acres. 
-
 ```
 #Reshape this dataframe to create our plot
 annual_class_melt<-melt(annual_class,id=c("year","num_fires","burned_ac_total"))
 
 annual_class_bar<-ggplot(data=annual_class_melt,aes(x=year,y=value,fill=rev(variable)))+geom_bar(stat="identity")+xlab("Year")+scale_x_continuous(breaks=c(1950,1960,1970,1980,1990,2000,2010,2017))+ylab("Acres Burned")+scale_y_continuous(breaks=c(0,500000,1000000,2000000,3000000),labels=c("0","500,000","1,000,000","2,000,000","3,000,000"))+ggtitle("The Forests They Are a-Burnin'", subtitle="B.C. Forest Fires")+scale_fill_discrete(name = "Fire Class", labels = c("7", "6","5","4","3","2","1"))
 ```
-
-![year_class_bar](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/year_class_bar.png)
-
-2017 is certainly the worst year on record with over 3 million acres of forest fires. There is no clear pattern to the data, and a discussion of the effects of global warming on forest fires is beyond the scope of this project.
-
-
