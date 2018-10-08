@@ -1,19 +1,15 @@
 # BC Historical Forest Fires
 
 
-The relationship between forests and fires is complicated. Fires are a natural part of the lifecycle of forests and can even [benefit some trees](https://en.wikipedia.org/wiki/Sequoiadendron_giganteum#Ecology). When old or diseased trees burn the canopy is thinned allowing more sunlight for young and healthy trees (which can often survive fires) and other plant species. Further when forests burn, nutrients are brought to the forest floor enriching the soil. These allow forests to stay healthy and diverese, which in turn allows the wildlife that inhabits them to stay healthy. However, if forest fires are too intense they can burn even healthy trees, damage the soil, create smoke which can harm wildlife, and destroy homes or even entire towns. 
+The relationship between forests and fires is complicated. Fires are a natural part of the lifecycle of forests and can even [benefit some trees](https://en.wikipedia.org/wiki/Sequoiadendron_giganteum#Ecology). When old or diseased trees burn the canopy is thinned allowing more sunlight for young and healthy trees (which can often survive fires). As forests go up in flames, their nutrients are brought to the forest floor, enriching the soil. These allow forests to stay healthy and diverese, which in turn allows the wildlife that inhabits them to stay healthy. However, if forest fires are too intense they can burn even healthy trees, damage the soil, create smoke which can harm wildlife, and destroy homes or communities.
 
-With the sun obscured and skies darkened on what should be a sunny summer day, I decided to look at the history of BC's forest fires. This data is from the BC online data catalogue, and runs from 1950-2017. As of writing, this preliminary data shows that 2018 has surpassed 2017 to become [BC's worst ever year](https://www.cbc.ca/news/canada/british-columbia/state-emergency-bc-wildfires-1.4803546) but as the season is not over the data is thus incomplete and not used.
+With the sun obscured and skies darkened on what should be a sunny summer day, I decided to look at the history of British Columbia's forest fires. This data is from the BC online data catalogue, and runs from 1950-2017. As of writing 2018 has surpassed 2017 to become BC's [worst ever forest fire seasons](https://www.cbc.ca/news/canada/british-columbia/state-emergency-bc-wildfires-1.4803546) but as the season is not over the data is thus incomplete and not used.
 
+The dataset has a huge range of sizes, fires as small as 0.0025 acres (ac) to as enormous as 1,300,000 ac (for context BC spans 235 million acres). This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group (NWCG) have created a set of [classes](https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0) for fire sizes. 
 
-
-Of the 150,000 fires recorded between 1950 and 2017, 58% of fires were caused by humans, 41% by lightning, and a small fraction with unknown causes.
-
-The sizes of fires range from 0.001 [hectares](https://en.wikipedia.org/wiki/Hectare) (ha) to over 500,000 ha. This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group (NWCG) have created a set of [classes](https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0) for fire sizes. Based on these we will add a new column to our dataframe. 
-
-|Class 1|2|3|4|5|6|7|
-|---|---|---|---|---|---|---|
-|<0.25|0.25<=  & < 10| 10<= & < 100| 100<= & < 300| 300<= & < 1000| 1000<= & < 3000| 3000<= |
+|Class|1|2|3|4|5|6|7|
+|---|---|---|---|---|---|---|---|
+|Size (Ac)|<0.25|0.25<=  & < 10| 10<= & < 100| 100<= & < 300| 300<= & < 1000| 1000<= & < 3000| 3000<= |
 
 
 
