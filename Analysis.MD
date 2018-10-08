@@ -3,7 +3,9 @@
 
 The relationship between forests and fires is complicated. Fires are a natural part of the lifecycle of forests and can even [benefit some trees](https://en.wikipedia.org/wiki/Sequoiadendron_giganteum#Ecology). When old or diseased trees burn the canopy is thinned allowing more sunlight for young and healthy trees (which can often survive fires). As forests go up in flames, their nutrients are brought to the forest floor, enriching the soil. These allow forests to stay healthy and diverese, which in turn allows the wildlife that inhabits them to stay healthy. However, if forest fires are too intense they can burn even healthy trees, damage the soil, create smoke which can harm wildlife, and destroy homes or communities.
 
-With the sun obscured and skies darkened on what should be a sunny summer day, I decided to look at the history of British Columbia's forest fires. This data is from the BC online data catalogue, and runs from 1950-2017. As of writing 2018 has surpassed 2017 to become BC's [worst ever forest fire seasons](https://www.cbc.ca/news/canada/british-columbia/state-emergency-bc-wildfires-1.4803546) but as the season is not over the data is thus incomplete and not used.
+With the sun obscured and skies darkened on what should be a sunny summer day (see picture below, taken in 2017), I decided to look at the history of British Columbia's forest fires. This data is from the BC online data catalogue, and runs from 1950-2017. As of writing 2018 has surpassed 2017 to become BC's [worst ever forest fire seasons](https://www.cbc.ca/news/canada/british-columbia/state-emergency-bc-wildfires-1.4803546) but as the season is not over the data is thus incomplete and not used.
+
+[water_smoke_sun](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/photo%20(16).jpg)
 
 The dataset has a huge range of sizes, fires as small as 0.0025 acres (ac) to as enormous as 1,300,000 ac (for context BC spans 235 million acres). This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group (NWCG) have created a set of [classes](https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0) for fire sizes. 
 
@@ -11,8 +13,7 @@ The dataset has a huge range of sizes, fires as small as 0.0025 acres (ac) to as
 |---|---|---|---|---|---|---|---|
 |Size (Ac)|X<0.25|0.25<=X<10|10<=X<100| 100<=X<300| 300<=X<1000| 1000<=X<3000| 3000<=X |
 
-
-
+Every year stories come out of [people starting forest fires with cigarettes](https://www.telegraph.co.uk/news/2017/07/17/cigarette-butt-thought-have-caused-major-forest-fire-southern/). This highlights just how fragile our forests are and how a seemingly innocuous act like flicking a cigarette butt can cause immense damage to the environment. I was hoping to learn about the specific ignitions of the fire but the data set only has the 'cause' of the fires in three broad categories: human, ligthining, and unknown. 
 
 ![cause_bar](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/cause_bar_labels.png)
 
