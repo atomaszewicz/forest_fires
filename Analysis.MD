@@ -6,7 +6,7 @@ The relationship between forests and fires is complicated. Fires are a natural p
 With the sun obscured and skies darkened on what should be a sunny summer day (see picture below, taken in 2017), I decided to look at the history of British Columbia's forest fires. This data is from the BC online data catalogue, and runs from 1950-2017. As of writing 2018 has surpassed 2017 to become BC's [worst ever forest fire seasons](https://www.cbc.ca/news/canada/british-columbia/state-emergency-bc-wildfires-1.4803546) but as the season is not over the data is thus incomplete and not used.
 
 ![water_smoke_sun](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/photo%20(16).jpg)
-English Bay as seen from Third Beach, 2017. 
+*Figure 1* English Bay as seen from Third Beach, 2017. 
 
 The dataset has a huge range of sizes, fires as small as 0.0025 acres (ac) to as enormous as 1,300,000 ac (for context BC spans 235 million acres). This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group has created a set of [groups](https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0) to classify fires. 
 
@@ -17,6 +17,7 @@ The dataset has a huge range of sizes, fires as small as 0.0025 acres (ac) to as
 Every year stories come out of [people starting forest fires with cigarettes](https://www.telegraph.co.uk/news/2017/07/17/cigarette-butt-thought-have-caused-major-forest-fire-southern/). This highlights just how fragile our forests are and how a seemingly innocuous act like flicking a cigarette butt can cause immense damage to the environment. I was hoping to learn about the specific ignition sources of fires but the data set only has the 'cause' of the fires in three broad categories: human, ligthining, and unknown. 
 
 ![cause_bar](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/cause_bar_labels.png)
+*Figure 2* Number of fires by class and cause
 
 There are vastly more small fires than large fires (96% are smaller than 100 acres), but the largest 1% of fires account for over 90% of the total area burned. How has the amount of forest burned annual changed over time?
 
@@ -24,6 +25,7 @@ Over the 67 years this data covers, over 20 million acres of forest have burned.
 
 
 ![year_class_bar](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/year_class_bar.png)
+*Figure 3* Number of fires by year and class
 
 2017 is certainly the worst year on record with over 3 million acres of forest fires. There is no clear pattern to the data, and a discussion of the effects of global warming on forest fires is beyond the scope of this project.
 
