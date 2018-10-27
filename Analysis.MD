@@ -6,9 +6,9 @@ The relationship between forests and fires is complicated. Fires are a natural p
 With the sun obscured and skies darkened on what should be a sunny summer day (see picture below, taken in 2017), I decided to look at the history of British Columbia's forest fires. This data is from the BC online data catalogue, and runs from 1950-2017. As of writing 2018 has surpassed 2017 to become BC's [worst ever forest fire seasons](https://www.cbc.ca/news/canada/british-columbia/state-emergency-bc-wildfires-1.4803546) but as the season is not over the data is thus incomplete and not used.
 
 ![water_smoke_sun](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/photo%20(16).jpg)
-**Figure 1:**  English Bay as seen from Third Beach, 2017. 
+**Figure 1:**  English Bay as seen from Third Beach, summer 2017. 
 
-The dataset has a huge range of sizes, fires as small as 0.0025 acres (ac) to as enormous as 1,300,000 ac (for context BC spans 235 million acres). This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group has created a set of [groups](https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0) to classify fires. 
+The dataset has a huge range of sizes, fires as small as 0.0025 acres (ac) to as enormous as 1,300,000 ac (for context BC spans 235 million acres). This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group has created a [classification system](https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0)) for fire sizes.
 
 |Class|1|2|3|4|5|6|7|
 |---|---|---|---|---|---|---|---|
