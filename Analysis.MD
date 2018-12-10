@@ -13,7 +13,7 @@ The dataset has a huge range of sizes, fires as small as 0.0025 acres (ac) to as
 
 |Class|1|2|3|4|5|6|7|
 |---|---|---|---|---|---|---|---|
-|Size (Ac)|X<0.25|0.25<=X<10|10<=X<100| 100<=X<300| 300<=X<1000| 1000<=X<3000| 3000<=X |
+|Size (Ac)|X<0.25|0.25<=X<10|10$\le$X<100| 100<=X<300| 300<=X<1000| 1000<=X<3000| 3000<=X |
 
 ## Out of the Frying Pan and Into the Fire
 
