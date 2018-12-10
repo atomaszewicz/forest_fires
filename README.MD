@@ -1,3 +1,3 @@
-Work in progress.
+A study of the historic forest fire data in British Columbia. Data is available from BC government website (see Data file in this repository). 
 
-Project is studying historic data (1950-2017) on forest fires in British Columbia. Data is available from BC government (see Data file in this repository). 
+See 'Analysis' for report. 
