@@ -1,3 +1,3 @@
-A study of the historic forest fire data in British Columbia. Data is available from BC government website (see Data file in this repository). 
+A study of the historic forest fire data in British Columbia. Data is available from the [BC government website](https://catalogue.data.gov.bc.ca/dataset/fire-incident-locations-historical)
 
 See 'Analysis' for report. 
