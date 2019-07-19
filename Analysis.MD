@@ -17,9 +17,7 @@ The dataset has a huge range of sizes, fires as small as 0.0025 acres (ac) to as
 
 ## Out of the Frying Pan and Into the Fire
 
-Every year stories come out of [people starting forest fires with cigarettes](https://www.telegraph.co.uk/news/2017/07/17/cigarette-butt-thought-have-caused-major-forest-fire-southern/). These highlight the fragility of our forests and how responsible we have to be. I was hoping to analyze the specific ignition sources for fires, but the data set
-
-has the 'cause' as three broad categories: person, ligthining, and unknown.
+Every summer I get a bit sad by campfire bans, it isn't quite the same setting up your tents and cooking dinner without a fire. However since it seems that cigarette butts can [cause large forest fires](https://www.telegraph.co.uk/news/2017/07/17/cigarette-butt-thought-have-caused-major-forest-fire-southern/), forgoing the campfire is a small price to pay to keep our forests around.  But what of other sources? The data set lists three categories of 'causes': person, ligthining, and unknown.
 
 ![cause_bar](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/cause_bar_labels.png)
 **Figure 2:** Number of fires by class and cause
