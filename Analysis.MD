@@ -2,18 +2,18 @@
 
 ## Preamble
 
-The relationship between forests and fires is complicated. [Fires are a natural part of the lifecycle of forests and can even [benefit some trees](https://en.wikipedia.org/wiki/Sequoiadendron_giganteum#Ecology). The burning of old and diseased trees thins the canopy which allows more sunlight for young and healthy trees (which can survive fires). By brining the nutrients of aged trees to the floor allows the next generation to grow and keeps forests healthy and diverse. However if forest fires are too intense they can burn even healthy trees, damage the soil, create smoke which can harm wildlife, and destroy homes or communities. 
+The relationship between fire and forests is complicated. Fires are a natural part of the lifecycle of forests and can even [benefit some trees](https://en.wikipedia.org/wiki/Sequoiadendron_giganteum#Ecology). The burning of old and diseased trees thins the canopy allowing more sunlight to reach young and healthy trees (which can survive fires). As trees burn, nutrients fall to the forest floor enabling future generations to grow and keeping forests healthy and diverse. However, if forest fires are too intense they can burn healthy trees, damage the soil, create smoke which can harm wildlife, and destroy homes or communities.
 
-With the sun obscured and skies darkened on what should be a sunny summer day (see picture below, taken in 2017), I decided to look at the history of British Columbia's forest fires. This data is from the BC online data catalogue and runs from 1950-2017. As of writing this, 2018 has surpassed 2017 to become BC's [worst ever forest fire seasons](https://www.cbc.ca/news/canada/british-columbia/state-emergency-bc-wildfires-1.4803546) but as the season is not over the data is thus incomplete and won't be used.
+With the sun obscured and skies darkened on what should be a sunny summer day (see picture below, taken in 2017), I decided to look at the history of British Columbia's forest fires. This data is from the BC online data catalogue and runs from 1950-2017. I  am doing this project in 2018 and this year has just surpassed 2017 to become BC's [worst ever forest fire season.](https://www.cbc.ca/news/canada/british-columbia/state-emergency-bc-wildfires-1.4803546) Sadly data for this year has not been added yet.
 
 ![water_smoke_sun](https://raw.githubusercontent.com/atomaszewicz/forest_fires/master/Images/photo%20(16).jpg)
 **Figure 1:**  English Bay as seen from Third Beach, summer 2017. 
 
-The dataset has a huge range of sizes, fires as small as 0.0025 acres (ac) to as enormous as 1,300,000 ac (BC spans 235 million acres). This is a large range and I'm not sure what constitutes a major fire. Thankfully the National Wildfire Coordination Group has created a [classification system](https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0)) for fire sizes.
+The dataset has a huge range of sizes, fires as small as 0.0025 acres (ac) to as enormous as 1,300,000 ac (BC spans 235 million acres). This is a large range but thankfully the National Wildfire Coordination Group has created a [classification system](https://www.nwcg.gov/term/glossary/size-class-of-fire%C2%A0)) for fire sizes.
 
 |Class|1|2|3|4|5|6|7|
 |---|---|---|---|---|---|---|---|
-|Size (Ac)|X<0.25|0.25<=X<10|10 <= X<100| 100<=X<300| 300<=X<1000| 1000<=X<3000| 3000<=X |
+|Size (Acres)|X<0.25|0.25<=X<10|10 <= X<100| 100<=X<300| 300<=X<1000| 1000<=X<3000| 3000<=X |
 
 ## Out of the Frying Pan and Into the Fire
 
